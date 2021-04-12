@@ -1,0 +1,21 @@
+
+
+html {
+    font-family: "Source Sans Pro", sans-serif;
+  }
+body{
+    background-color: rgba(100, 182, 237, 0.445);
+    margin: 0%;  
+}
+.entireContainer{
+    display: flex;
+    align-items: center;
+    padding-top: 2vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#generate{
+    background-color: darkorange;
+    padding:20px;
+}
