@@ -1,26 +1,30 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
-}
-
-const WEATHER_JOURNAL_APIKEY = process.env.WEATHER_JOURNAL_APIKEY
-const port = 8080;
 const express = require('express');
 const app = express();
+const port = 8080;
 
-app.use(express.json());
+let bodyParser = require('body-parser');
+let cors = require('cors');
+const { response } = require('express');
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
+
 app.use(express.static('public'))
 
-app.post('/weather', (req,res)=>{
-
+app.listen(port, ()=>{
+    console.log(`Port ${port} is running`)
 })
 
 
-// const cors = require('cors');
+const projectData = {};
 
-// app.use(cors());
 
-// app.use(express.urlencoded({extended:true}));
+app.get('/entry', getMapData)
 
-const server = app.listen(port, ()=>{console.log(`port number is :${port}`)});
-
+console.log('There is request coming here');
+function getMapData(req,res){
+  
+    res.send(response)
+}
 

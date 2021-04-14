@@ -5,29 +5,36 @@
     <meta name="description" content="Weather Journal App">
     <meta name="author" content="Srikanth Athikari">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../WeatherJournalApp/app.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet" />
+
+    <link href="app.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Source+Sans+Pro:wght@200&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
 
-<div class="entireContainer">
-    <h2 id="header">Weather Journal App</h2>
-
-
-        <label>Enter zip code here</label>
-        <input type="number" placeholder="zipcode" id="zip" value="">
+    <div class="entireContainer">
+        <h2 id="header">Weather Journal App</h2>
+        
+      
+        <input type="number" placeholder="Enter Zip Code Here" id="zip">
         <br><br>
-        <label id="feelings">How are you feeling today ?</label>
-        <br><br>
-        <textarea placeholder="Enter Your Feelings" rows="4" cols="50"></textarea>
+        <textarea id="feelings" placeholder="Enter Your Feelings" rows="4" cols="50"></textarea>
         <br><br>
         <button id="generate">Generate</button>
 
-</div>
+        <div id ="entryholder">
+            <div id= "date"></div>
+            <div id= "temp"></div>
+            <div id= "content"></div>
+        </div>
+
+    </div>
 
 </body>
 
 
-<script src="app.js"></script>
+<script defer src="app.js"></script>
+
 </html>
