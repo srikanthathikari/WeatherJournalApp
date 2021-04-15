@@ -19,3 +19,7 @@ body{
     background-color: darkorange;
     padding:20px;
 }
+
+#entryholder > div{
+    font-size: 25px;
+}
