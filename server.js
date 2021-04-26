@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({ credentials: true, origin: 'http://localhost:8080' }));
 
-app.use(express.static('public'))
+app.use(express.static('src'))
 
 app.listen(port, () => {
     console.log(`Port ${port} is running`)
