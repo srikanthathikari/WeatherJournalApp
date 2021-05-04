@@ -1,10 +1,8 @@
 
+import apiKey from './api.js';
 
 //Weather API URL
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&temp=Celsius&zip=";
-
-//Personal API KEY
-const apiKey = "&APPID=eb8a5e185569290a4918724ce7b298ff";
 
 // Adding an event listener for the user to click on generate button
 document.getElementById('generate').addEventListener("click", getData);
@@ -16,15 +14,15 @@ let newDate = dateToday.getMonth() + 1 +  '-' + dateToday.getDate() + '-' + date
 
 
 function getData() {
-
    const userData = {
     feelings: feelingsFromUser.value,
     newDate,
     }
+  
+  
     getWeatherData(baseURL, zip.value, apiKey).then(function (data) {
         saveWeatherInformation('/saveData', data, userData ).then(updateUI());
-    })
-
+    }) 
 }
 
 const getWeatherData = async (baseURL, zip, apiKey) => {
@@ -57,6 +55,7 @@ const updateUI = async () =>{
     const request = await fetch('/all')
     try{
         const allData = await request.json();
+        console.log(allData)
         document.getElementById('date').innerHTML = `Today is ${newDate}`;
         document.getElementById('temp').innerHTML = `Weather now  ${allData.dataFromAPI.main.temp} \u00B0C`;
         document.getElementById('content').innerHTML = `You are feeling ${allData.dataFromUser.feelings}`
